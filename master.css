@@ -28,8 +28,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 * {margin: 0; padding: 0; box-sizing: border-box; }
 * a {cursor: pointer; text-decoration: none; color:#fff }
 * i {font-style: italic; }
-* p { font-size: 1rem;}
-
+* p { font-size: 1em;}
 @font-face {
   font-family: 'Helvetica Neue';
   src: url('font/HelveticaNeue-Roman.eot');
@@ -58,10 +57,11 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 body{
   font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
   background-color: #f4f3ce;
 }
 
-/* General */
+/* MENÚ */
 nav {
   position: fixed;
   top: 0;
@@ -70,11 +70,10 @@ nav {
   background-color: #F6E294; /* Color de fondo del menú */
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   z-index: 5;
 }
 
-/* Menú superior */
+/* Menú Superior */
 .menu-superior {
   display: flex;
   height: 60px;
@@ -89,28 +88,50 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  font-weight: bold;
   color: #000;
-  background-color: #F6E294;
   border-right: 1px solid #000;
 }
 
 .logo > a{
   display: block;
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
 }
 
-.menu-superior .texto-derecha {
-  font-style: italic;
-  flex-basis: 76%;
+.menu-superior .stripeNews {
   display: flex;
+  overflow: hidden;
+  flex-basis: 76%;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  color: #000;
-  background-color: #F6E294;
+  font-style: italic;
+  font-size:1.125em ;
+  color: #272723;
+}
+
+.menu-superior .stripeNews div{
+  white-space: nowrap;
+  animation: animate 40s linear infinite;
+  animation-delay: -40s;
+}
+
+.menu-superior .stripeNews div:last-child{
+  animation: animate2 40s linear infinite;
+  animation-delay: -20s;
+}
+.menu-superior .stripeNews div img{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+.menu-superior .stripeNews div span{
+  font-family: 'Helvetica NB', sans-serif;
+}
+
+.menu-superior .stripeNews div a{
+  font-family: 'Helvetica NB', sans-serif;
+  color: #272723;
+  text-decoration: underline;
 }
 
 /* Menú inferior */
@@ -127,7 +148,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 0.875em;
   color: #000;
   border-left: 1px solid black; 
   background-color: #F6E294;
@@ -147,12 +168,10 @@ nav {
   height: 100%;
   background-color: #F6E294;
   border-bottom: 1px solid #000;
+  transition: all 0.5s ease;
 }
 
 .menu-inferior li:hover a{
-  font-family: 'Helvetica NB', sans-serif;
-  color: #000;
-  display: block;
   background-color: #F1F0C2;
 }
 
@@ -211,20 +230,20 @@ footer p{
 /* Títulos */
 #title1 {
   font-family: 'Helvetica NB', sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.5em;
   margin-bottom: 20px;
 }
 
 #title2, #title3 {
   font-family: 'Helvetica NB', sans-serif;
-  font-size: 2rem;
+  font-size: 2em;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
 /* Texto */
 p {
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -251,4 +270,24 @@ section#texto p a:hover{
 
 .boton:hover {
   background-color: #e5c66a;
+}
+
+
+/* Animations */
+@keyframes animate{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes animate2{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-200%);
+  }
 }
