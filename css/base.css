@@ -308,6 +308,7 @@ main{
   font-family: var(--font-titles);
   font-size: 6rem;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 
